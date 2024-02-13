@@ -22,4 +22,17 @@ public class RingBufferTest {
 
         assertEquals(0, buffer.size());
     }
+
+    @Test
+    public void testWriterAndReader() {
+        RingBuffer<Integer> buffer = new RingBuffer<>();
+        Integer val = null;
+        val = buffer.poll();
+        assertEquals(null, val);
+        val = buffer.poll();
+        assertEquals(null, val);
+        buffer.put(10);
+        val = buffer.poll();
+        assertEquals(10, val);
+    }
 }
