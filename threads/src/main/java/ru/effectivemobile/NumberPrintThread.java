@@ -4,6 +4,7 @@ public class NumberPrintThread implements Runnable {
 
     private final boolean isEven;
     private final Object lock;
+    private volatile boolean condition = true;
 
     public NumberPrintThread(boolean isEven, Object lock) {
         this.isEven = isEven;
@@ -19,8 +20,12 @@ public class NumberPrintThread implements Runnable {
                 else if (!isEven && i % 2 == 1)
                     System.out.println(i);
                 lock.notify();
+                condition = false;
                 try {
-                    lock.wait();
+                    while (!condition) {
+                        lock.wait();
+                        condition = true;
+                    }
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
