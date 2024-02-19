@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/auth-db
+    username: root
+    password: qwerty123
+    driver-class-name: org.postgresql.Driver
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+
+jwt:
+  secret:
+    access: YF/ZjHUIemEQuz86kOQKavYkGQSehii3Gugb167N/vg=
