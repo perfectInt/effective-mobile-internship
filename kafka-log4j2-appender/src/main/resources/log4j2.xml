@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <Console>
+            <PatternLayout></PatternLayout>
+        </Console>
+        <Kafka name="KafkaAppender" topic="logs">
+            <PatternLayout pattern="%d [%t] %-5level %logger{36} - %msg%n"/>
+        </Kafka>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="KafkaAppender"/>
+        </Root>
+    </Loggers>
+</Configuration>
