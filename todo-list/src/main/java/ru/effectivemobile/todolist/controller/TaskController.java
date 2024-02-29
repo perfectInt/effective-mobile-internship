@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.effectivemobile.todolist.dto.Response;
 import ru.effectivemobile.todolist.dto.TaskDto;
+import ru.effectivemobile.todolist.entity.Task;
 import ru.effectivemobile.todolist.service.TaskService;
 
 import java.util.List;
